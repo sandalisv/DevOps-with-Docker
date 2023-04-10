@@ -1,0 +1,19 @@
+* Dockerfile
+
+
+FROM golang:1.16-alpine
+
+WORKDIR /app
+
+COPY . /app
+
+RUN go build
+
+EXPOSE 8080
+
+CMD ["./server"]
+
+# Set the environment variable for the allowed request origin
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+* localhost:8080/ping responded with pong.

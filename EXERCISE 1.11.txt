@@ -1,0 +1,17 @@
+* Dockerfile
+
+FROM openjdk:8
+
+WORKDIR /app
+
+# Copy the source code to the container
+COPY . .
+
+# Build the application
+RUN ./mvnw package
+
+# Set the command to run the application
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
+
+# Expose port 8080
+EXPOSE 8080

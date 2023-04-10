@@ -1,0 +1,12 @@
+* To build the container using dockerfile created in EXERCISE 1.8
+	docker build -t web-server .
+
+* TO run it in port 8080
+	docker run -p 8080:8080 web-server
+
+* When accessing localhost:8080 from browser the output is
+	{
+		"message": "You connected to the following path: /",
+		"path": "/"
+	}
+	

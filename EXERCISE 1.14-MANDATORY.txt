@@ -1,0 +1,67 @@
+* Dockerfile Front End
+
+FROM node:16-alpine
+
+WORKDIR /app
+
+# Copy package.json and package-lock.json into container
+COPY package*.json ./
+
+# Install node packages
+RUN npm install
+
+# Copy all other files to container
+COPY . .
+
+# Set the environment variable for the backend URL
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
+
+# Build the app
+RUN npm run build
+
+# Install the serve package
+RUN npm install -g serve
+
+# Expose port 
+EXPOSE 5000
+
+# Start the serve command to serve the static files
+CMD ["serve", "-s", "-l", "5000", "build"]
+
+
+* Commands to run Front end
+	docker build -t my-frontend .
+	docker run -d --name frontend -p 5000:5000 my-frontend
+	
+
+
+
+* Dockerfile Back End
+
+FROM golang:1.16-alpine
+
+WORKDIR /app
+
+COPY . /app
+
+RUN go build
+
+EXPOSE 8080
+
+CMD ["./server"]
+
+# Set the environment variable for the allowed request origin
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+
+* Commands to run backend
+	docker build -t my-backend .
+	docker run -d --name backend -p 8080:8080 my-backend
+
+
+
+OUTPUT
+* localhost:5000 load the webpage
+* Exercise 1.12: Congratulations! You configured your ports correctly!
+* Once clicked on Exercise 1.14: Success! Great job!
+

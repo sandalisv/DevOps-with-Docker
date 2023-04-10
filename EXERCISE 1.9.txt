@@ -1,0 +1,34 @@
+* Command used 
+	docker run -v C:\logs\text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
+
+Before running i have created the directory c:\logs and file text.log
+
+* Output in text.log file
+
+2023-04-09 16:16:35 +0000 UTC
+2023-04-09 16:16:37 +0000 UTC
+2023-04-09 16:16:39 +0000 UTC
+2023-04-09 16:16:41 +0000 UTC
+2023-04-09 16:16:43 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-04-09 16:16:45 +0000 UTC
+2023-04-09 16:16:47 +0000 UTC
+2023-04-09 16:16:49 +0000 UTC
+2023-04-09 16:16:51 +0000 UTC
+2023-04-09 16:16:53 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-04-09 16:16:55 +0000 UTC
+2023-04-09 16:16:57 +0000 UTC
+2023-04-09 16:16:59 +0000 UTC
+2023-04-09 16:17:01 +0000 UTC
+2023-04-09 16:17:03 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-04-09 16:17:05 +0000 UTC
+2023-04-09 16:17:07 +0000 UTC
+2023-04-09 16:17:09 +0000 UTC
+2023-04-09 16:17:11 +0000 UTC
+2023-04-09 16:17:13 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-04-09 16:17:15 +0000 UTC
+2023-04-09 16:17:17 +0000 UTC
+2023-04-09 16:17:19 +0000 UTC

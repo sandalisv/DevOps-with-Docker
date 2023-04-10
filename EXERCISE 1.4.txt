@@ -1,0 +1,38 @@
+SOLUTION 1
+
+* Start Container
+	docker run -d -it --name looper ubuntu sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+* Go to bash
+	docker exec -it looper bash
+* Install Curl
+	apt-get -y update; apt-get -y install curl
+* Access helsinki.fi
+	curl helsinki.fi
+* Output
+	<html>
+	<head><title>301 Moved Permanently</title></head>
+	<body>
+	<center><h1>301 Moved Permanently</h1></center>
+	<hr><center>nginx/1.20.1</center>
+	</body>
+	</html>
+
+SMART SOLUTION
+
+* Start container named mycontainer2 and install curl and access a website in single command
+	docker run -it --name mycontainer2 ubuntu /bin/bash -c "apt-get update && apt-get install -y curl && while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+
+	It will ask to input website name as follows.
+		Input website:
+		helsinki.fi
+
+	and output will be 
+		<html>
+		<head><title>301 Moved Permanently</title></head>
+		<body>
+		<center><h1>301 Moved Permanently</h1></center>
+		<hr><center>nginx/1.20.1</center>
+		</body>
+		</html>
+		
+	

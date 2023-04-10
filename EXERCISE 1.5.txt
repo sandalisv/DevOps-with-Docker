@@ -1,0 +1,22 @@
+* Pull ubuntu image
+	docker run devopsdockeruh/simple-web-service:ubuntu
+
+* Pull alpine image
+	docer run devopsdockeruh/simple-web-service:alpine
+
+* docker ps to get container names
+
+* Check whether secret message working correctly in alpine
+	docker exec -it gifted_austin sh
+	tail -f ./text.log
+	
+	Secret Message:
+		Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+*Compare sizes
+	docker container ls -s
+
+	ubuntu : 11.7kB (virtual 15.7MB)
+	alpine : 11.7kB (virtual 15.7MB)
+
+	* alpine container size is less than ubuntu container size.

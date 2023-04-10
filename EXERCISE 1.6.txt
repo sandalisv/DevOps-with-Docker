@@ -1,0 +1,13 @@
+* To pull and run the image
+	docker run -it devopsdockeruh/pull_exercise
+
+	output:
+		Downloaded newer image for devopsdockeruh/pull_exercise:latest
+		Give me the password:
+
+* Searched the image name and found the password in the docs.
+		Give me the password: basics
+
+* Output - Secret Message
+	You found the correct password. Secret message is:
+	"This is the secret message"

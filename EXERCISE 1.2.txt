@@ -1,0 +1,43 @@
+* I stopped the running container.
+docker container stop 52a0
+
+* Before deleting containers
+docker ps -as
+
+	CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES             SIZE
+52a0368d2aa7   nginx     "/docker-entrypoint.…"   22 minutes ago   Exited (0) 8 seconds ago              romantic_leakey   1.09kB (virtual 142MB)
+aefd67d7f224   nginx     "/docker-entrypoint.…"   22 minutes ago   Exited (0) 21 minutes ago             bold_easley       1.09kB (virtual 142MB)
+ec266755c3f4   nginx     "/docker-entrypoint.…"   26 minutes ago   Exited (0) 22 minutes ago             musing_austin     1.09kB (virtual 142MB)
+
+* Before deleting images.
+docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    080ed0ed8312   10 days ago   142MB
+
+* I removed existing ngnix image.
+docker rmi nginx
+
+* To delete all containers
+
+docker container prune
+
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] Y
+Deleted Containers:
+52a0368d2aa766afa06e390512f631cd00d00e6a278fb2d152117af20f6d0a90
+aefd67d7f22479fe5071566d9722a142b7daf682a012752a8889840f70b41c78
+ec266755c3f4894a88351ca0adfe5377a31166b547596c087937fd0c3a2673b7
+
+*To delete all images
+
+docker image prune
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] Y
+Total reclaimed space: 0B
+
+* After deleting
+docker ps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+
+docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE

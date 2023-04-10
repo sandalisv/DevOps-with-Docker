@@ -1,0 +1,27 @@
+EXERCISE 1.1: GETTING STARTED
+
+* Start 3 containers.
+       docker container run -d nginx
+       ec266755c3f4894a88351ca0adfe5377a31166b547596c087937fd0c3a2673b7
+       docker container run -d nginx
+       aefd67d7f22479fe5071566d9722a142b7daf682a012752a8889840f70b41c78
+       docker container run -d nginx
+       52a0368d2aa766afa06e390512f631cd00d00e6a278fb2d152117af20f6d0a90
+
+* Stop 2 containers.
+       docker container stop ec266
+       docker container stop aefd67
+
+OUTPUT
+
+* docker ps -a
+
+	CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
+52a0368d2aa7   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute           80/tcp    romantic_leakey
+aefd67d7f224   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 17 seconds ago             bold_easleyec266755c3f4   nginx     "/docker-entrypoint.…"   5 minutes ago        Exited (0) 32 seconds ago             musing_austin
+
+
+                                   
+
+
+
