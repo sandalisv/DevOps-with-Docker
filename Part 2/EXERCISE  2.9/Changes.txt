@@ -1,0 +1,9 @@
+* I removed ENV REQUEST_ORIGIN=http://localhost:5000 from backend Dockerfile.
+
+* I removed ENV REACT_APP_BACKEND_URL=http://localhost:8080 from frontend Dockerfile.
+
+* And I added 
+	 build: ./example-backend to backend 
+	 build: ./example-frontend to fronted 
+  in docker-compose yml file. So the images will be built here, and modified dockerfiles since we are now
+  accessing frontend and backend through proxy urls set in nginx.

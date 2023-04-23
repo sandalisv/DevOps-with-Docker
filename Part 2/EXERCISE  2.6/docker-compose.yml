@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: node:16-alpine
+    working_dir: /app
+    ports:
+      - "5000:5000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080
+    command: ["sh", "-c", "npm install && npm run build && npm install -g serve && serve -s -l 5000 build"]
+    volumes:
+      - ./example-frontend:/app
+    depends_on:
+      - backend
+
+  backend:
+    image: golang:1.16-alpine
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./example-backend:/app
+    environment:
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    command: ["sh", "-c", "go build -o server && ./server"]
+    depends_on:
+      - redis
+      - postgres
+
+  redis:
+    image: redis:alpine
+    command: redis-server
+    volumes:
+      - redis-data:/data
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+
+volumes:
+  redis-data:
