@@ -1,0 +1,7 @@
+Link to the github repository with the configuration 
+
+	https://github.com/sandalisv/express-app
+
+Link to the dockerhub repository
+
+	https://hub.docker.com/repository/docker/sandalisv/express-app/general

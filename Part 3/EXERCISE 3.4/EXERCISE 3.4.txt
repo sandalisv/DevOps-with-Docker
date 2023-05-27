@@ -1,0 +1,11 @@
+Run the shell script using this command
+
+	docker run -e DOCKER_USER=<Dockerhub_USERNAME> -e DOCKER_PWD=<Dockerhub_PASSWORD> -v /var/run/docker.sock:/var/run/docker.sock my-builder-image https://github.com/sandalisv/express-app sandalisv/express-app
+
+Github repository link
+
+	https://github.com/sandalisv/express-app
+
+Dockerhub repository link
+
+	https://hub.docker.com/repository/docker/sandalisv/express-app/general

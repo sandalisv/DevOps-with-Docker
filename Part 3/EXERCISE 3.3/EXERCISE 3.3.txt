@@ -1,0 +1,11 @@
+Run the shell script using this command
+
+	builder.sh https://github.com/sandalisv/express-app sandalisv/testing
+
+Github repository link
+
+	https://github.com/sandalisv/express-app
+
+Dockerhub repository link
+
+	https://hub.docker.com/repository/docker/sandalisv/testing/general

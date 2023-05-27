@@ -1,0 +1,9 @@
+My backend image size - 465.56 MB
+
+My frontend image size - 683.9 MB
+
+after optimizing by combining RUN commands
+
+My backend image size - 447.47 MB
+
+My frontend image size - 674.98 MB

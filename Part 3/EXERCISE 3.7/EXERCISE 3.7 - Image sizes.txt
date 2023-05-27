@@ -1,0 +1,14 @@
+BEFORE
+
+My backend image size - 447.17 MB (Using base image golang:1.16-alpine)
+
+My frontend image size - 683.9 MB (Using base image node16:alpine)
+
+
+
+AFTER
+
+My backend image size - 447.47 MB (Using base image golang:1.16.5-alpine)
+
+My frontend image size - 674.98 MB (Using base image node:16-alpine3.17, already using latest base images)
+
